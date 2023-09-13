@@ -18,6 +18,17 @@ class SimpleThanks(toga.App):
         """
         main_box = toga.Box()
 
+        #widgets
+        thxtext = toga.Label(text="Thank you, ...")
+        birthdaybtn = toga.Button(text="Birthday")
+        motherdaybtn = toga.Button(text="Fathers Day")
+        
+
+
+        #add
+        main_box.add(thxtext)
+
+
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
         self.main_window.show()
