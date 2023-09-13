@@ -25,6 +25,9 @@ class SimpleThanks(toga.App):
 
         # add
         main_box.add(thxtext)
+        main_box.add(birthdaybtn)
+        main_box.add(mothersdaybtn)
+        main_box.add(fathersdaybtn)
 
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
