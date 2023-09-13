@@ -3,7 +3,7 @@
 project_name = "Simple Thanks"
 bundle = "de.cmg"
 version = "0.0.1"
-url = "https://cmg.de/simplethanks"
+url = "https://github.com/tct123/simplethanks"
 license = "MIT license"
 author = "tct123"
 author_email = "42028373+tct123@users.noreply.github.com"
