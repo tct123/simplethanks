@@ -24,7 +24,7 @@ class SimpleThanks(toga.App):
         Usually, you would add your application to a main content box.
         We then create a main window (with a name matching the app), and
         show the main window.
-        """        
+        """
         main_box = toga.Box()
 
         # widgets
@@ -58,21 +58,27 @@ class SimpleThanks(toga.App):
     def pressed_birthdaybtn(self, widget):
         if plattform != "android" and plattform != "ios":
             self.resources_folder = Path(__file__).joinpath("../resources").resolve()
-            self.birthday_filepath = self.resources_folder.joinpath("happy-birthday-whistled.wav")
+            self.birthday_filepath = self.resources_folder.joinpath(
+                "happy-birthday-whistled.wav"
+            )
             print(self.birthday_filepath)
             playsound.playsound(sound=self.birthday_filepath)
         else:
             player = MediaPlayer()
-            sound =join(dirname(__file__), "resources/happy-birthday-whistled.wav")
+            sound = join(dirname(__file__), "resources/happy-birthday-whistled.wav")
             player.setDataSource(sound)
             player.prepare()
             player.start()
 
     def pressed_mothersdaybtn(self, widget):
-        self.main_window.info_dialog(title="Happy Mothersday",message="Happy Mothersday")
+        self.main_window.info_dialog(
+            title="Happy Mothersday", message="Happy Mothersday"
+        )
 
     def pressed_fathersdaybtn(self, widget):
-        self.main_window.info_dialog(title="Happy Fathersday",message="Happy Fathersday")
+        self.main_window.info_dialog(
+            title="Happy Fathersday", message="Happy Fathersday"
+        )
 
 
 def main():
