@@ -5,6 +5,10 @@ import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 
+plattform = toga.platform.current_platform
+
+if plattform != "android" and plattform != "ios":
+    import playsound
 
 class SimpleThanks(toga.App):
     def startup(self):
@@ -18,10 +22,10 @@ class SimpleThanks(toga.App):
         main_box = toga.Box()
 
         # widgets
-        thxtext = toga.Label(text="Thank you, ...")
-        birthdaybtn = toga.Button(text="Birthday", on_press=self.pressed_birthdaybtn)
-        mothersdaybtn = toga.Button(text="Mothers Day", on_press=self.pressed_mothersdaybtn)
-        fathersdaybtn = toga.Button(text="Fathers day", on_press=self.pressed_fathersdaybtn)
+        thxtext = toga.Label(text="Thank you, ...",style=Pack(padding=10,flex=1))
+        birthdaybtn = toga.Button(text="Birthday", on_press=self.pressed_birthdaybtn, style=Pack(padding=10,flex=1))
+        mothersdaybtn = toga.Button(text="Mothers Day", on_press=self.pressed_mothersdaybtn, style=Pack(padding=10,flex=1))
+        fathersdaybtn = toga.Button(text="Fathers day", on_press=self.pressed_fathersdaybtn, style=Pack(padding=10,flex=1))
 
         # add
         main_box.add(thxtext)

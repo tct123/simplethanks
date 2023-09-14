@@ -36,6 +36,7 @@ requires = [
 [tool.briefcase.app.simplethanks.linux]
 requires = [
     "toga-gtk~=0.3.1",
+    "playsound",
 ]
 
 [tool.briefcase.app.simplethanks.linux.system.debian]
