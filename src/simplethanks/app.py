@@ -51,6 +51,9 @@ class SimpleThanks(toga.App):
         main_box.add(mothersdaybtn)
         main_box.add(fathersdaybtn)
 
+        # style
+        main_box.style.direction = "column"
+
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = main_box
         self.main_window.show()
