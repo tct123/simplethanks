@@ -1,4 +1,4 @@
-# This project was generated with 0.3.15 using template: https://github.com/beeware/briefcase-template@v0.3.15
+# This project was generated with 0.3.16 using template: https://github.com/beeware/briefcase-template@v0.3.16
 [tool.briefcase]
 project_name = "Simple Thanks"
 bundle = "de.cmg"
@@ -28,14 +28,16 @@ test_requires = [
 ]
 
 [tool.briefcase.app.simplethanks.macOS]
+universal_build = true
 requires = [
-    "toga-cocoa~=0.3.1",
-    "std-nslog~=1.0.0"
+    "toga-cocoa~=0.4.0",
+    "std-nslog~=1.0.0",
+    "playsound",
 ]
 
 [tool.briefcase.app.simplethanks.linux]
 requires = [
-    "toga-gtk~=0.3.1",
+    "toga-gtk~=0.4.0",
     "playsound",
 ]
 
@@ -74,6 +76,26 @@ system_runtime_requires = [
     "libcanberra-gtk3",
     # Needed to provide WebKit2 at runtime
     # "webkit2gtk3",
+]
+
+[tool.briefcase.app.simplethanks.linux.system.suse]
+system_requires = [
+    # Needed to compile pycairo wheel
+    "cairo-devel",
+    # Needed to compile PyGObject wheel
+    "gobject-introspection-devel",
+]
+
+system_runtime_requires = [
+    # Needed to provide GTK
+    "gtk3",
+    # Needed to support Python bindings to GTK
+    "gobject-introspection", "typelib(Gtk)=3.0",
+    # Dependencies that GTK looks for at runtime
+    "libcanberra-gtk3-0",
+    # Needed to provide WebKit2 at runtime
+    # "libwebkit2gtk3",
+    # "typelib(WebKit2)",
 ]
 
 [tool.briefcase.app.simplethanks.linux.system.arch]
@@ -130,24 +152,25 @@ flatpak_sdk = "org.gnome.Sdk"
 
 [tool.briefcase.app.simplethanks.windows]
 requires = [
-    "toga-winforms~=0.3.1",
+    "toga-winforms~=0.4.0",
+    "playsound",
 ]
 
 # Mobile deployments
 [tool.briefcase.app.simplethanks.iOS]
 requires = [
-    "toga-iOS~=0.3.1",
+    "toga-iOS~=0.4.0",
     "std-nslog~=1.0.0"
 ]
 
 [tool.briefcase.app.simplethanks.android]
 requires = [
-    "toga-android~=0.3.1"
+    "toga-android~=0.4.0"
 ]
 
 # Web deployments
 [tool.briefcase.app.simplethanks.web]
 requires = [
-    "toga-web~=0.3.1",
+    "toga-web~=0.4.0",
 ]
 style_framework = "Shoelace v2.3"
