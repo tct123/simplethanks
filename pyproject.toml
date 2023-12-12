@@ -33,12 +33,14 @@ requires = [
     "toga-cocoa~=0.4.0",
     "std-nslog~=1.0.0",
     "playsound",
+    "pygobject",
 ]
 
 [tool.briefcase.app.simplethanks.linux]
 requires = [
     "toga-gtk~=0.4.0",
     "playsound",
+    "pygobject",
 ]
 
 [tool.briefcase.app.simplethanks.linux.system.debian]
@@ -154,6 +156,7 @@ flatpak_sdk = "org.gnome.Sdk"
 requires = [
     "toga-winforms~=0.4.0",
     "playsound",
+    "pygobject",
 ]
 
 # Mobile deployments

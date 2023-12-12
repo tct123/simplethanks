@@ -4,13 +4,14 @@ A simple thank you
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
-
+from pathlib import Path
+from toga.paths import Paths
 
 plattform = toga.platform.current_platform
 
+
 if plattform != "android" and plattform != "ios":
     import playsound
-    from pathlib import Path
 else:
     from android.media import MediaPlayer
     from os.path import dirname, join
@@ -18,6 +19,8 @@ else:
 
 class SimpleThanks(toga.App):
     def startup(self):
+        self.path = Paths().app
+        print(self.path)
         """
         Construct and show the Toga application.
 
@@ -60,10 +63,8 @@ class SimpleThanks(toga.App):
 
     def pressed_birthdaybtn(self, widget):
         if plattform != "android" and plattform != "ios":
-            self.resources_folder = Path(__file__).joinpath("../resources").resolve()
-            self.birthday_filepath = self.resources_folder.joinpath(
-                "happy-birthday-whistled.wav"
-            )
+            # self.resources_folder = Path(__file__).joinpath("../resources").resolve()
+            self.birthday_filepath = playsound.playsound(sound=f"{self.path}/resources/happy-birthday-whistled.wav")
             print(self.birthday_filepath)
             playsound.playsound(sound=self.birthday_filepath)
         else:
