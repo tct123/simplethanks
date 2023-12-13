@@ -6,9 +6,9 @@ from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 
 
-plattform = toga.platform.current_platform
+platform = toga.platform.current_platform
 
-if plattform != "android" and plattform != "ios":
+if platform != "android" and platform != "ios":
     import playsound
     from pathlib import Path
 else:
@@ -59,7 +59,7 @@ class SimpleThanks(toga.App):
         self.main_window.show()
 
     def pressed_birthdaybtn(self, widget):
-        if plattform != "android" and plattform != "ios":
+        if platform != "android" and platform != "ios":
             self.resources_folder = Path(__file__).joinpath("../resources").resolve()
             self.birthday_filepath = self.resources_folder.joinpath(
                 "happy-birthday-whistled.wav"
