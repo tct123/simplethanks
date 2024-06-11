@@ -2,6 +2,7 @@ import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 from mylocale.TR import tr
+import locale
 
 
 platform = toga.platform.current_platform
@@ -16,17 +17,28 @@ else:
 class SimpleThanks(toga.App):
     def startup(self):
         file = f"{self.paths.app.absolute()}/resources/localisation.csv"
+        if platform == "android":
+            lang = str(
+                self._impl.native.getResources().getConfiguration().getLocales().get(0)
+            )
+
+        else:
+            lang = locale.getlocale()
+            lang, _ = lang
         main_box = toga.Box()
 
         # widgets
-        thxtext = toga.Label(text=tr(csv_file=file,target_key="THANKYOU"), style=Pack(padding=10, flex=1))
+        thxtext = toga.Label(
+            text=tr(csv_file=file, target_key="THANKYOU"),
+            style=Pack(padding=10, flex=1),
+        )
         birthdaybtn = toga.Button(
             text=tr(csv_file=file, target_key="BIRTHDAY"),
             on_press=self.pressed_birthdaybtn,
             style=Pack(padding=10, flex=1),
         )
         mothersdaybtn = toga.Button(
-            text=tr(csv_file=file,target_key="MOTHERSDAY"),
+            text=tr(csv_file=file, target_key="MOTHERSDAY"),
             on_press=self.pressed_mothersdaybtn,
             style=Pack(padding=10, flex=1),
         )
