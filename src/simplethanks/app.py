@@ -1,10 +1,10 @@
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
+from mylocale.TR import tr
 
 
 platform = toga.platform.current_platform
-
 if platform != "android" and platform != "ios":
     import playsound
     from pathlib import Path
@@ -15,6 +15,7 @@ else:
 
 class SimpleThanks(toga.App):
     def startup(self):
+        file = f"{self.paths.app.absolute()}/resources/localisation.csv"
         main_box = toga.Box()
 
         # widgets
