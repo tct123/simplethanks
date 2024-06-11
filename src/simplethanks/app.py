@@ -29,21 +29,21 @@ class SimpleThanks(toga.App):
 
         # widgets
         thxtext = toga.Label(
-            text=tr(csv_file=file, target_key="THANKYOU"),
+            text=tr(csv_file=file, target_key="THANKYOU", langcode=lang),
             style=Pack(padding=10, flex=1),
         )
         birthdaybtn = toga.Button(
-            text=tr(csv_file=file, target_key="BIRTHDAY"),
+            text=tr(csv_file=file, target_key="BIRTHDAY", langcode=lang),
             on_press=self.pressed_birthdaybtn,
             style=Pack(padding=10, flex=1),
         )
         mothersdaybtn = toga.Button(
-            text=tr(csv_file=file, target_key="MOTHERSDAY"),
+            text=tr(csv_file=file, target_key="MOTHERSDAY", langcode=lang),
             on_press=self.pressed_mothersdaybtn,
             style=Pack(padding=10, flex=1),
         )
         fathersdaybtn = toga.Button(
-            text=tr(csv_file=file, target_key="FATHERSDAY"),
+            text=tr(csv_file=file, target_key="FATHERSDAY", langcode=lang),
             on_press=self.pressed_fathersdaybtn,
             style=Pack(padding=10, flex=1),
         )
