@@ -26,12 +26,12 @@ class SimpleThanks(toga.App):
             style=Pack(padding=10, flex=1),
         )
         mothersdaybtn = toga.Button(
-            text="Mothers Day",
+            text=tr(csv_file=file,target_key="MOTHERSDAY"),
             on_press=self.pressed_mothersdaybtn,
             style=Pack(padding=10, flex=1),
         )
         fathersdaybtn = toga.Button(
-            text="Fathers day",
+            text=tr(csv_file=file, target_key="FATHERSDAY"),
             on_press=self.pressed_fathersdaybtn,
             style=Pack(padding=10, flex=1),
         )
