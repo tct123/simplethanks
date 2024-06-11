@@ -19,7 +19,7 @@ class SimpleThanks(toga.App):
         main_box = toga.Box()
 
         # widgets
-        thxtext = toga.Label(text="Thank you, ...", style=Pack(padding=10, flex=1))
+        thxtext = toga.Label(text=tr(csv_file=file,target_key="THANKYOU"), style=Pack(padding=10, flex=1))
         birthdaybtn = toga.Button(
             text="Birthday",
             on_press=self.pressed_birthdaybtn,
