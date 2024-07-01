@@ -1,5 +1,7 @@
 stringname,en_EN,de_DE
-THANKYOU,"Thank you, ...","Danke, …"
 BIRTHDAY,Birthday,Geburtstag
-MOTHERSDAY,Mothers day,Muttertag
 FATHERSDAY,Fathers day,Vatertag
+HAPPYFATHERSDAY,Happy Fathers day,Fröhlicher Vatertag
+HAPPYMOTHERSDAY,Happy Mothers day,Fröhlicher Muttertag
+MOTHERSDAY,Mothers day,Muttertag
+THANKYOU,"Thank you, ...","Danke, …"
