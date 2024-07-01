@@ -54,7 +54,7 @@ class SimpleThanks(toga.App):
             on_press=self.pressed_fathersdaybtn,
             style=Pack(padding=10, flex=1),
         )
-        notificationbtn = toga.Button(
+        websitebtn = toga.Button(
             text="Website",
             on_press=self.pressed_visitwebsitebtn,
             style=Pack(padding=10, flex=1),
@@ -65,7 +65,7 @@ class SimpleThanks(toga.App):
         main_box.add(birthdaybtn)
         main_box.add(mothersdaybtn)
         main_box.add(fathersdaybtn)
-        main_box.add(notificationbtn)
+        main_box.add(websitebtn)
 
         # style
         main_box.style.direction = "column"
