@@ -110,7 +110,7 @@ class SimpleThanks(toga.App):
         )
 
     def pressed_notificationbtn(self, widget):
-        self.beep()
+        self.visit_homepage()
 
 
 def main():
