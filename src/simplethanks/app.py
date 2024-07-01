@@ -79,14 +79,22 @@ class SimpleThanks(toga.App):
 
     def pressed_mothersdaybtn(self, widget):
         self.main_window.info_dialog(
-            title=tr(csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang),
-            message=tr(csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang),
+            title=tr(
+                csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
+            ),
+            message=tr(
+                csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
+            ),
         )
 
     def pressed_fathersdaybtn(self, widget):
         self.main_window.info_dialog(
-            title=tr(csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang),
-            message=tr(csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang),
+            title=tr(
+                csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+            ),
+            message=tr(
+                csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+            ),
         )
 
 
