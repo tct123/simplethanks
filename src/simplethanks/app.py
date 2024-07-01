@@ -21,12 +21,15 @@ class SimpleThanks(toga.App):
             self.lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
             )
+            self.formal_name = (
+                tr(csv_file=self.file, target_key="FORMALNAME", langcode=self.lang),
+            )
 
         else:
             lang = locale.getlocale()
             lang, _ = lang
             self.lang = lang
-        self.
+        print(self.description)
         main_box = toga.Box()
 
         # widgets
