@@ -56,7 +56,7 @@ class SimpleThanks(toga.App):
         )
         notificationbtn = toga.Button(
             text="Notification",
-            on_press=self.pressed_notificationbtn,
+            on_press=self.pressed_visitwebsitebtn,
             style=Pack(padding=10, flex=1),
         )
 
@@ -109,7 +109,7 @@ class SimpleThanks(toga.App):
             ),
         )
 
-    def pressed_notificationbtn(self, widget):
+    def pressed_visitwebsitebtn(self, widget):
         self.visit_homepage()
 
 
