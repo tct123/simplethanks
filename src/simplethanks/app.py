@@ -55,7 +55,7 @@ class SimpleThanks(toga.App):
             style=Pack(padding=10, flex=1),
         )
         notificationbtn = toga.Button(
-            text="Notification",
+            text="Website",
             on_press=self.pressed_visitwebsitebtn,
             style=Pack(padding=10, flex=1),
         )
