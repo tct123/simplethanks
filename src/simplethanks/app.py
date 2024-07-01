@@ -65,6 +65,7 @@ class SimpleThanks(toga.App):
         main_box.add(birthdaybtn)
         main_box.add(mothersdaybtn)
         main_box.add(fathersdaybtn)
+        main_box.add(notificationbtn)
 
         # style
         main_box.style.direction = "column"
