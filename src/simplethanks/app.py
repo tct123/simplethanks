@@ -54,6 +54,11 @@ class SimpleThanks(toga.App):
             on_press=self.pressed_fathersdaybtn,
             style=Pack(padding=10, flex=1),
         )
+        notificationbtn = toga.Button(
+            text="Notification",
+            on_press=self.pressed_notificationbtn,
+            style=Pack(padding=10, flex=1),
+        )
 
         # add
         main_box.add(thxtext)
@@ -102,6 +107,9 @@ class SimpleThanks(toga.App):
                 csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
             ),
         )
+
+    def pressed_notificationbtn(self, widget):
+        self.beep()
 
 
 def main():
