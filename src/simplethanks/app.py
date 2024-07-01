@@ -26,6 +26,7 @@ class SimpleThanks(toga.App):
             lang = locale.getlocale()
             lang, _ = lang
             self.lang = lang
+        self.
         main_box = toga.Box()
 
         # widgets
