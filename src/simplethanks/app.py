@@ -16,7 +16,7 @@ else:
 
 class SimpleThanks(toga.App):
     def startup(self):
-        file = f"{self.paths.app.absolute()}/resources/localisation.csv"
+        self.file = f"{self.paths.app.absolute()}/resources/localisation.csv"
         if platform == "android":
             lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
@@ -29,21 +29,21 @@ class SimpleThanks(toga.App):
 
         # widgets
         thxtext = toga.Label(
-            text=tr(csv_file=file, target_key="THANKYOU", langcode=lang),
+            text=tr(csv_file=self.file, target_key="THANKYOU", langcode=lang),
             style=Pack(padding=10, flex=1),
         )
         birthdaybtn = toga.Button(
-            text=tr(csv_file=file, target_key="BIRTHDAY", langcode=lang),
+            text=tr(csv_file=self.file, target_key="BIRTHDAY", langcode=lang),
             on_press=self.pressed_birthdaybtn,
             style=Pack(padding=10, flex=1),
         )
         mothersdaybtn = toga.Button(
-            text=tr(csv_file=file, target_key="MOTHERSDAY", langcode=lang),
+            text=tr(csv_file=self.file, target_key="MOTHERSDAY", langcode=lang),
             on_press=self.pressed_mothersdaybtn,
             style=Pack(padding=10, flex=1),
         )
         fathersdaybtn = toga.Button(
-            text=tr(csv_file=file, target_key="FATHERSDAY", langcode=lang),
+            text=tr(csv_file=self.file, target_key="FATHERSDAY", langcode=lang),
             on_press=self.pressed_fathersdaybtn,
             style=Pack(padding=10, flex=1),
         )
@@ -78,14 +78,14 @@ class SimpleThanks(toga.App):
 
     def pressed_mothersdaybtn(self, widget):
         self.main_window.info_dialog(
-            title=tr(csv_file=file, target_key="HAPPYMOTHERSDAY", langcode=lang),
-            message=tr(csv_file=file, target_key="HAPPYMOTHERSDAY", langcode=lang),
+            title=tr(csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=lang),
+            message=tr(csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=lang),
         )
 
     def pressed_fathersdaybtn(self, widget):
         self.main_window.info_dialog(
-            title=tr(csv_file=file, target_key="HAPPYFATHERSDAY", langcode=lang),
-            message=tr(csv_file=file, target_key="HAPPYFATHERSDAY", langcode=lang),
+            title=tr(csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=lang),
+            message=tr(csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=lang),
         )
 
 
