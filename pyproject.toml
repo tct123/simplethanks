@@ -14,33 +14,18 @@ description = "A simple thank you"
 long_description = """More details about the app should go here.
 """
 icon = "src/simplethanks/resources/simplethanks"
-sources = [
-    "src/simplethanks",
-]
-test_sources = [
-    "tests",
-]
+sources = ["src/simplethanks"]
+test_sources = ["tests"]
 
-requires = [
-    "mylocale"
-]
-test_requires = [
-    "pytest",
-]
+requires = ["mylocale"]
+test_requires = ["pytest"]
 
 [tool.briefcase.app.simplethanks.macOS]
 universal_build = true
-requires = [
-    "toga-cocoa~=0.4.5",
-    "std-nslog~=1.0.0",
-    "playsound",
-]
+requires = ["toga-cocoa~=0.4.5", "std-nslog~=1.0.0", "playsound"]
 
 [tool.briefcase.app.simplethanks.linux]
-requires = [
-    "toga-gtk~=0.4.5",
-    "playsound",
-]
+requires = ["toga-gtk~=0.4.5", "playsound"]
 
 [tool.briefcase.app.simplethanks.linux.system.debian]
 system_requires = [
@@ -91,7 +76,8 @@ system_runtime_requires = [
     # Needed to provide GTK
     "gtk3",
     # Needed to support Python bindings to GTK
-    "gobject-introspection", "typelib(Gtk)=3.0",
+    "gobject-introspection",
+    "typelib(Gtk)=3.0",
     # Dependencies that GTK looks for at runtime
     "libcanberra-gtk3-0",
     # Needed to provide WebKit2 at runtime
@@ -142,9 +128,7 @@ system_requires = [
     "PackageKit-gtk3-module",
     "gvfs-client",
 ]
-linuxdeploy_plugins = [
-    "DEPLOY_GTK_VERSION=3 gtk",
-]
+linuxdeploy_plugins = ["DEPLOY_GTK_VERSION=3 gtk"]
 
 [tool.briefcase.app.simplethanks.linux.flatpak]
 flatpak_runtime = "org.gnome.Platform"
@@ -152,22 +136,14 @@ flatpak_runtime_version = "44"
 flatpak_sdk = "org.gnome.Sdk"
 
 [tool.briefcase.app.simplethanks.windows]
-requires = [
-    "toga-winforms~=0.4.5",
-    "playsound",
-]
+requires = ["toga-winforms~=0.4.5", "playsound"]
 
 # Mobile deployments
 [tool.briefcase.app.simplethanks.iOS]
-requires = [
-    "toga-iOS~=0.4.5",
-    "std-nslog~=1.0.0"
-]
+requires = ["toga-iOS~=0.4.5", "std-nslog~=1.0.0"]
 
 [tool.briefcase.app.simplethanks.android]
-requires = [
-    "toga-android~=0.4.5"
-]
+requires = ["toga-android~=0.4.5"]
 
 build_gradle_dependencies = [
     "androidx.appcompat:appcompat:1.0.2",
@@ -177,7 +153,5 @@ build_gradle_dependencies = [
 
 # Web deployments
 [tool.briefcase.app.simplethanks.web]
-requires = [
-    "toga-web~=0.4.5",
-]
+requires = ["toga-web~=0.4.5"]
 style_framework = "Shoelace v2.3"
