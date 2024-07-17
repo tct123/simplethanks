@@ -26,9 +26,7 @@ class SimpleThanks(toga.App):
             # )
 
         else:
-            lang = locale.getlocale()
-            lang, _ = lang
-            self.lang = lang
+            self.lang = locale.getlocale()[0]
         # self._description = tr(
         #    csv_file=self.file, target_key="DESCRIBTION", langcode=self.lang
         # )
