@@ -20,14 +20,13 @@ class SimpleThanks(toga.App):
         if platform == "android":
             self.lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
-            )
+            ).split("_")[0]
             # self.formal_name = (
             #    tr(csv_file=self.file, target_key="FORMALNAME", langcode=self.lang),
             # )
 
         else:
-            self.lang = locale.getlocale()[0]
-        self.lang = self.lang.split("_")[0]
+            self.lang = locale.getlocale()[0].split("_")[0]
         # self._description = tr(
         #    csv_file=self.file, target_key="DESCRIBTION", langcode=self.lang
         # )
