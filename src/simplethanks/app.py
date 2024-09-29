@@ -3,6 +3,7 @@ from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 from mylocale.TR import tr
 import locale
+import asyncio
 
 
 platform = toga.platform.current_platform
@@ -88,7 +89,7 @@ class SimpleThanks(toga.App):
             player.start()
 
     def pressed_mothersdaybtn(self, widget):
-        self.main_window.info_dialog(
+        motherdialog = toga.InfoDialog(
             title=tr(
                 csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
             ),
@@ -96,9 +97,12 @@ class SimpleThanks(toga.App):
                 csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
             ),
         )
+        mothertask = asyncio.create_task(self.main_window.dialog(motherdialog))
+        #mothertask.add_done_callback(self.dialog_dismissed)
+
 
     def pressed_fathersdaybtn(self, widget):
-        self.main_window.info_dialog(
+        fatherdialog = toga.InfoDialog(
             title=tr(
                 csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
             ),
@@ -106,6 +110,8 @@ class SimpleThanks(toga.App):
                 csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
             ),
         )
+        fathertask = asyncio.create_task(self.main_window.dialog(fatherdialog))
+        #fathertask.add_done_callback(self.dialog_dismissed)
 
     def pressed_visitwebsitebtn(self, widget):
         self.visit_homepage()
