@@ -33,7 +33,7 @@ class SimpleThanks(toga.App):
         #    csv_file=self.file, target_key="DESCRIBTION", langcode=self.lang
         # )
         main_box = toga.Box()
-
+        # print(self.BACKGROUND)
         # widgets
         thxtext = toga.Label(
             text=tr(csv_file=self.file, target_key="THANKYOU", langcode=self.lang),
