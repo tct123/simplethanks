@@ -7,6 +7,7 @@ import asyncio
 
 
 platform = toga.platform.current_platform
+
 if platform != "android" and platform != "ios":
     import playsound
     from pathlib import Path
