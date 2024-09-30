@@ -98,8 +98,7 @@ class SimpleThanks(toga.App):
             ),
         )
         mothertask = asyncio.create_task(self.main_window.dialog(motherdialog))
-        #mothertask.add_done_callback(self.dialog_dismissed)
-
+        # mothertask.add_done_callback(self.dialog_dismissed)
 
     def pressed_fathersdaybtn(self, widget):
         fatherdialog = toga.InfoDialog(
@@ -111,7 +110,7 @@ class SimpleThanks(toga.App):
             ),
         )
         fathertask = asyncio.create_task(self.main_window.dialog(fatherdialog))
-        #fathertask.add_done_callback(self.dialog_dismissed)
+        # fathertask.add_done_callback(self.dialog_dismissed)
 
     def pressed_visitwebsitebtn(self, widget):
         self.visit_homepage()
