@@ -17,14 +17,23 @@ sources = ["src/simplethanks"]
 test_sources = ["tests"]
 
 requires = ["mylocale"]
-test_requires = ["pytest"]
+test_requires = [
+    "pytest",
+]
 
 [tool.briefcase.app.simplethanks.macOS]
 universal_build = true
-requires = ["toga-cocoa~=0.4.7", "std-nslog~=1.0.0", "playsound"]
+requires = [
+    "toga-cocoa~=0.4.8",
+    "std-nslog~=1.0.3",
+    "playsound"
+]
 
 [tool.briefcase.app.simplethanks.linux]
-requires = ["toga-gtk~=0.4.7", "playsound"]
+requires = [
+    "toga-gtk~=0.4.8",
+    "playsound"
+]
 
 [tool.briefcase.app.simplethanks.linux.system.debian]
 system_requires = [
@@ -128,22 +137,32 @@ system_requires = [
     "gvfs-client",
 ]
 
-linuxdeploy_plugins = ["DEPLOY_GTK_VERSION=3 gtk"]
+linuxdeploy_plugins = [
+    "DEPLOY_GTK_VERSION=3 gtk",
+]
 
 [tool.briefcase.app.simplethanks.linux.flatpak]
 flatpak_runtime = "org.gnome.Platform"
-flatpak_runtime_version = "45"
+flatpak_runtime_version = "47"
 flatpak_sdk = "org.gnome.Sdk"
 
 [tool.briefcase.app.simplethanks.windows]
-requires = ["toga-winforms~=0.4.7", "playsound"]
+requires = [
+    "toga-winforms~=0.4.8",
+    "playsound"
+]
 
 # Mobile deployments
 [tool.briefcase.app.simplethanks.iOS]
-requires = ["toga-iOS~=0.4.7", "std-nslog~=1.0.0"]
+requires = [
+    "toga-iOS~=0.4.8",
+    "std-nslog~=1.0.3",
+]
 
 [tool.briefcase.app.simplethanks.android]
-requires = ["toga-android~=0.4.7"]
+requires = [
+    "toga-android~=0.4.8",
+]
 
 base_theme = "Theme.Material3.DynamicColors.DayNight"
 
@@ -157,5 +176,7 @@ build_gradle_dependencies = [
 
 # Web deployments
 [tool.briefcase.app.simplethanks.web]
-requires = ["toga-web~=0.4.7"]
+requires = [
+    "toga-web~=0.4.8",
+]
 style_framework = "Shoelace v2.3"
