@@ -117,15 +117,19 @@ class SimpleThanks(toga.App):
         if platform != "android" and platform != "ios":
             self.visit_homepage()
         else:
-            fatherdialog = toga.InfoDialog(
+            platformdialog = toga.InfoDialog(
                 title=tr(
-                    csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+                    csv_file=self.file,
+                    target_key="SUPPORTEDPLATFORM",
+                    langcode=self.lang,
                 ),
                 message=tr(
-                    csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+                    csv_file=self.file,
+                    target_key="SUPPORTEDPLATFORM",
+                    langcode=self.lang,
                 ),
             )
-            fathertask = asyncio.create_task(self.main_window.dialog(fatherdialog))
+            platformtask = asyncio.create_task(self.main_window.dialog(platformdialog))
 
 
 def main():
