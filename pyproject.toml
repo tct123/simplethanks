@@ -23,17 +23,10 @@ test_requires = [
 
 [tool.briefcase.app.simplethanks.macOS]
 universal_build = true
-requires = [
-    "toga-cocoa~=0.4.8",
-    "std-nslog~=1.0.3",
-    "playsound"
-]
+requires = ["toga-cocoa~=0.4.8", "std-nslog~=1.0.3", "playsound"]
 
 [tool.briefcase.app.simplethanks.linux]
-requires = [
-    "toga-gtk~=0.4.8",
-    "playsound"
-]
+requires = ["toga-gtk~=0.4.8", "playsound"]
 
 [tool.briefcase.app.simplethanks.linux.system.debian]
 system_requires = [
@@ -147,10 +140,7 @@ flatpak_runtime_version = "47"
 flatpak_sdk = "org.gnome.Sdk"
 
 [tool.briefcase.app.simplethanks.windows]
-requires = [
-    "toga-winforms~=0.4.8",
-    "playsound"
-]
+requires = ["toga-winforms~=0.4.8", "playsound"]
 
 # Mobile deployments
 [tool.briefcase.app.simplethanks.iOS]

@@ -114,7 +114,6 @@ class SimpleThanks(toga.App):
         # fathertask.add_done_callback(self.dialog_dismissed)
 
     def pressed_visitwebsitebtn(self, widget):
-        platform = "android"
         if platform != "android" and platform != "ios":
             self.visit_homepage()
         else:
