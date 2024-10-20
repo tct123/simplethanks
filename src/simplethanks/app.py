@@ -114,7 +114,19 @@ class SimpleThanks(toga.App):
         # fathertask.add_done_callback(self.dialog_dismissed)
 
     def pressed_visitwebsitebtn(self, widget):
-        self.visit_homepage()
+        platform = "android"
+        if platform != "android" and platform != "ios":
+            self.visit_homepage()
+        else:
+            fatherdialog = toga.InfoDialog(
+                title=tr(
+                    csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+                ),
+                message=tr(
+                    csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+                ),
+            )
+            fathertask = asyncio.create_task(self.main_window.dialog(fatherdialog))
 
 
 def main():
