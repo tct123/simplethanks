@@ -4,20 +4,16 @@ from toga.style.pack import COLUMN, ROW
 from mylocale.TR import tr
 import locale
 import asyncio
+import miniaudio
+import time
 
 
 platform = toga.platform.current_platform
 
-if platform != "android" and platform != "ios":
-    import playsound
-    from pathlib import Path
-else:
-    from android.media import MediaPlayer
-    from os.path import dirname, join
-
 
 class SimpleThanks(toga.App):
     def startup(self):
+        self.mypath = self.paths.app.absolute()
         self.file = f"{self.paths.app.absolute()}/resources/localisation.csv"
         if platform == "android":
             self.lang = str(
@@ -75,19 +71,8 @@ class SimpleThanks(toga.App):
         self.main_window.show()
 
     def pressed_birthdaybtn(self, widget):
-        if platform != "android" and platform != "ios":
-            self.resources_folder = Path(__file__).joinpath("../resources").resolve()
-            self.birthday_filepath = self.resources_folder.joinpath(
-                "happy-birthday-whistled.wav"
-            )
-            print(self.birthday_filepath)
-            playsound.playsound(sound=self.birthday_filepath)
-        else:
-            player = MediaPlayer()
-            sound = join(dirname(__file__), "resources/happy-birthday-whistled.wav")
-            player.setDataSource(sound)
-            player.prepare()
-            player.start()
+        file = f"{self.paths.app.absolute()}/resources/happy-birthday-whistled.wav"
+        self.playsound(file=file)
 
     def pressed_mothersdaybtn(self, widget):
         motherdialog = toga.InfoDialog(
@@ -130,6 +115,13 @@ class SimpleThanks(toga.App):
                 ),
             )
             platformtask = asyncio.create_task(self.main_window.dialog(platformdialog))
+
+    def playsound(self, file):
+        stream = miniaudio.stream_file(filename=file)
+        length = miniaudio.decode_file(filename=file).duration
+        with miniaudio.PlaybackDevice() as device:
+            device.start(stream)
+            time.sleep(length)
 
 
 def main():
