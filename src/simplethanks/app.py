@@ -14,39 +14,39 @@ platform = toga.platform.current_platform
 class SimpleThanks(toga.App):
     def startup(self):
         self.mypath = self.paths.app.absolute()
-        self.file = f"{self.paths.app.absolute()}/resources/localisation.csv"
+        self.tr_file = f"{self.mypath}/resources/localisation.csv"
         if platform == "android":
             self.lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
             ).split("_")[0]
             # self.formal_name = (
-            #    tr(csv_file=self.file, target_key="FORMALNAME", langcode=self.lang),
+            #    tr(csv_file=self.tr_file, target_key="FORMALNAME", langcode=self.lang),
             # )
 
         else:
             self.lang = locale.getlocale()[0].split("_")[0]
         # self._description = tr(
-        #    csv_file=self.file, target_key="DESCRIBTION", langcode=self.lang
+        #    csv_file=self.tr_file, target_key="DESCRIBTION", langcode=self.lang
         # )
         main_box = toga.Box()
         # print(self.BACKGROUND)
         # widgets
         thxtext = toga.Label(
-            text=tr(csv_file=self.file, target_key="THANKYOU", langcode=self.lang),
+            text=tr(csv_file=self.tr_file, target_key="THANKYOU", langcode=self.lang),
             style=Pack(padding=10, flex=1),
         )
         birthdaybtn = toga.Button(
-            text=tr(csv_file=self.file, target_key="BIRTHDAY", langcode=self.lang),
+            text=tr(csv_file=self.tr_file, target_key="BIRTHDAY", langcode=self.lang),
             on_press=self.pressed_birthdaybtn,
             style=Pack(padding=10, flex=1),
         )
         mothersdaybtn = toga.Button(
-            text=tr(csv_file=self.file, target_key="MOTHERSDAY", langcode=self.lang),
+            text=tr(csv_file=self.tr_file, target_key="MOTHERSDAY", langcode=self.lang),
             on_press=self.pressed_mothersdaybtn,
             style=Pack(padding=10, flex=1),
         )
         fathersdaybtn = toga.Button(
-            text=tr(csv_file=self.file, target_key="FATHERSDAY", langcode=self.lang),
+            text=tr(csv_file=self.tr_file, target_key="FATHERSDAY", langcode=self.lang),
             on_press=self.pressed_fathersdaybtn,
             style=Pack(padding=10, flex=1),
         )
@@ -77,10 +77,10 @@ class SimpleThanks(toga.App):
     def pressed_mothersdaybtn(self, widget):
         motherdialog = toga.InfoDialog(
             title=tr(
-                csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
+                csv_file=self.tr_file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
             ),
             message=tr(
-                csv_file=self.file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
+                csv_file=self.tr_file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
             ),
         )
         mothertask = asyncio.create_task(self.main_window.dialog(motherdialog))
@@ -89,10 +89,10 @@ class SimpleThanks(toga.App):
     def pressed_fathersdaybtn(self, widget):
         fatherdialog = toga.InfoDialog(
             title=tr(
-                csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+                csv_file=self.tr_file, target_key="HAPPYFATHERSDAY", langcode=self.lang
             ),
             message=tr(
-                csv_file=self.file, target_key="HAPPYFATHERSDAY", langcode=self.lang
+                csv_file=self.tr_file, target_key="HAPPYFATHERSDAY", langcode=self.lang
             ),
         )
         fathertask = asyncio.create_task(self.main_window.dialog(fatherdialog))
@@ -104,12 +104,12 @@ class SimpleThanks(toga.App):
         else:
             platformdialog = toga.InfoDialog(
                 title=tr(
-                    csv_file=self.file,
+                    csv_file=self.tr_file,
                     target_key="SUPPORTEDPLATFORM",
                     langcode=self.lang,
                 ),
                 message=tr(
-                    csv_file=self.file,
+                    csv_file=self.tr_file,
                     target_key="SUPPORTEDPLATFORM",
                     langcode=self.lang,
                 ),
