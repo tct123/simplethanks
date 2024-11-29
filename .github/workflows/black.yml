@@ -1,1 +1,10 @@
+name: Python Workflow with Ubuntu-dependencies
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: debian-latest
