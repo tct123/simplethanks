@@ -38,3 +38,13 @@ jobs:
       - name: Build
         run: |
           briefcase package
+            # 3. Artefakt hochladen
+      - name: Artefakt hochladen
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/example.txt
+          asset_name: example.txt
+          asset_content_type: text/plain
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
