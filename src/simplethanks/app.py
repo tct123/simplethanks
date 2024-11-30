@@ -128,8 +128,10 @@ class SimpleThanks(toga.App):
                 ),
             )
             platformtask = asyncio.create_task(self.main_window.dialog(platformdialog))
+
     def pressed_updatebtn(self, widget):
         webbrowser.open(url=self.update_url)
+
     def playsound(self, file):
         stream = miniaudio.stream_file(filename=file)
         length = miniaudio.decode_file(filename=file).duration
