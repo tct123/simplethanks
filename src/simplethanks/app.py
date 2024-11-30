@@ -7,6 +7,7 @@ import asyncio
 import miniaudio
 import time
 import myupdater as upd
+import webbrowser
 
 
 platform = toga.platform.current_platform
@@ -17,7 +18,7 @@ class SimpleThanks(toga.App):
         self.mypath = self.paths.app.absolute()
         self.tr_file = f"{self.mypath}/resources/localisation.csv"
         upd.writeversion(filepath=self.mypath, version=self.version)
-        update_url = upd.updater(
+        self.update_url = upd.updater(
             repo="https://github.com/tct123/simplethanks",
             repo_path="/releases/tag",
             file_url="https://raw.githubusercontent.com/tct123/simplethanks/refs/heads/main/src/simplethanks/VERSION",
@@ -62,6 +63,11 @@ class SimpleThanks(toga.App):
             on_press=self.pressed_visitwebsitebtn,
             style=Pack(padding=10, flex=1),
         )
+        updatebtn = toga.Button(
+            text="Check for updates",
+            on_press=self.pressed_updatebtn,
+            style=Pack(padding=10, flex=1),
+        )
 
         # add
         main_box.add(thxtext)
@@ -69,6 +75,7 @@ class SimpleThanks(toga.App):
         main_box.add(mothersdaybtn)
         main_box.add(fathersdaybtn)
         main_box.add(websitebtn)
+        main_box.add(updatebtn)
         # style
         main_box.style.direction = "column"
 
@@ -121,7 +128,8 @@ class SimpleThanks(toga.App):
                 ),
             )
             platformtask = asyncio.create_task(self.main_window.dialog(platformdialog))
-
+    def pressed_updatebtn(self, widget):
+        webbrowser.open(url=self.update_url)
     def playsound(self, file):
         stream = miniaudio.stream_file(filename=file)
         length = miniaudio.decode_file(filename=file).duration
