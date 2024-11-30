@@ -16,7 +16,7 @@ class SimpleThanks(toga.App):
     def startup(self):
         self.mypath = self.paths.app.absolute()
         self.tr_file = f"{self.mypath}/resources/localisation.csv"
-        upd.writeversion(filepath=)
+        upd.writeversion(filepath=self.mypath,version=self.version)
         if platform == "android":
             self.lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
