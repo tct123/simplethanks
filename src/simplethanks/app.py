@@ -17,7 +17,11 @@ class SimpleThanks(toga.App):
         self.mypath = self.paths.app.absolute()
         self.tr_file = f"{self.mypath}/resources/localisation.csv"
         upd.writeversion(filepath=self.mypath, version=self.version)
-        update = upd.updater()
+        update_url = upd.updater(
+            repo="https://github.com/tct123/simplethanks",
+            repo_path="/releases/tag",
+            file_url="https://raw.githubusercontent.com/tct123/simplethanks/refs/heads/main/src/simplethanks/VERSION",
+        )
         if platform == "android":
             self.lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
