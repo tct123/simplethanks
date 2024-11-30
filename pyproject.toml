@@ -17,7 +17,7 @@ sources = ["src/simplethanks"]
 test_sources = ["tests"]
 
 requires = [
-    "git+https://github.com/tct123/simplethanks.git",
+    "git+https://github.com/Creative-Media-Group/myupdater.git",
     "mylocale",
     "miniaudio",
 ]

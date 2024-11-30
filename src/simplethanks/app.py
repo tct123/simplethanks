@@ -6,6 +6,7 @@ import locale
 import asyncio
 import miniaudio
 import time
+import myupdater as upd
 
 
 platform = toga.platform.current_platform
@@ -15,6 +16,7 @@ class SimpleThanks(toga.App):
     def startup(self):
         self.mypath = self.paths.app.absolute()
         self.tr_file = f"{self.mypath}/resources/localisation.csv"
+        upd.writeversion(filepath=)
         if platform == "android":
             self.lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
