@@ -16,11 +16,7 @@ long_description = """More details about the app should go here.
 sources = ["src/simplethanks"]
 test_sources = ["tests"]
 
-requires = [
-    "git+https://github.com/Creative-Media-Group/myupdater.git",
-    "mylocale",
-    "miniaudio",
-]
+requires = ["myupdater==0.1.0", "mylocale", "miniaudio"]
 test_requires = ["pytest"]
 
 [tool.briefcase.app.simplethanks.macOS]
