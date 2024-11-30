@@ -16,7 +16,7 @@ class SimpleThanks(toga.App):
     def startup(self):
         self.mypath = self.paths.app.absolute()
         self.tr_file = f"{self.mypath}/resources/localisation.csv"
-        upd.writeversion(filepath=self.mypath,version=self.version)
+        upd.writeversion(filepath=self.mypath, version=self.version)
         if platform == "android":
             self.lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
@@ -64,7 +64,6 @@ class SimpleThanks(toga.App):
         main_box.add(mothersdaybtn)
         main_box.add(fathersdaybtn)
         main_box.add(websitebtn)
-
         # style
         main_box.style.direction = "column"
 
