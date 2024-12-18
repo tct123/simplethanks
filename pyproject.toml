@@ -2,7 +2,7 @@
 [tool.briefcase]
 project_name = "Simple Thanks"
 bundle = "de.cmg"
-version = "0.0.2"
+version = "0.0.3"
 url = "https://github.com/tct123/simplethanks"
 license.file = "LICENSE"
 author = "tct123"
