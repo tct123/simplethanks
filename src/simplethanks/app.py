@@ -4,8 +4,7 @@ from toga.style.pack import COLUMN, ROW
 from mylocale.TR import tr
 import locale
 import asyncio
-import miniaudio
-import time
+import mypysound as mp
 import myupdater as upd
 import webbrowser
 
@@ -85,7 +84,7 @@ class SimpleThanks(toga.App):
 
     def pressed_birthdaybtn(self, widget):
         file = f"{self.paths.app.absolute()}/resources/happy-birthday-whistled.wav"
-        self.playsound(file=file)
+        mp.play(file=file)
 
     def pressed_mothersdaybtn(self, widget):
         motherdialog = toga.InfoDialog(
@@ -132,12 +131,7 @@ class SimpleThanks(toga.App):
     def pressed_updatebtn(self, widget):
         webbrowser.open(url=self.update_url)
 
-    def playsound(self, file):
-        stream = miniaudio.stream_file(filename=file)
-        length = miniaudio.decode_file(filename=file).duration
-        with miniaudio.PlaybackDevice() as device:
-            device.start(stream)
-            time.sleep(length)
+    
 
 
 def main():
