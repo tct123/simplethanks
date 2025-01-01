@@ -131,8 +131,6 @@ class SimpleThanks(toga.App):
     def pressed_updatebtn(self, widget):
         webbrowser.open(url=self.update_url)
 
-    
-
 
 def main():
     return SimpleThanks()
