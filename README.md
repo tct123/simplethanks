@@ -10,6 +10,6 @@ BeeWare](https://beeware.org/contributing/membership).
 
 A simple thank you
 ## About
-![img][python_svg]
+![Python powered][python_svg]
 
 [python_svg]: https://www.python.org/static/community_logos/python-powered-w.svg
