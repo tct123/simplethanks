@@ -9,3 +9,6 @@ like Briefcase, please consider** [becoming a financial member of
 BeeWare](https://beeware.org/contributing/membership).
 
 A simple thank you
+![img][python_svg]
+
+[python_svg]: https://www.python.org/static/community_logos/python-powered-w.svg
