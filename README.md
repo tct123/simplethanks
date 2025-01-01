@@ -12,4 +12,4 @@ A simple thank you
 ## About
 ![Python powered][python_svg]
 
-[python_svg]: https://www.python.org/static/community_logos/python-powered-w.svg
+[python_svg]: https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg
