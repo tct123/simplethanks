@@ -19,7 +19,7 @@ class SimpleThanks(toga.App):
         upd.writeversion(filepath=self.mypath, version=self.version)
         self.update_url = upd.updater(
             repo="https://github.com/tct123/simplethanks",
-            repo_path=f"releases/tag/{self.version}",
+            repo_path=f"releases/tag",
             file_url="https://raw.githubusercontent.com/tct123/simplethanks/refs/heads/main/src/simplethanks/VERSION",
         )
         if platform == "android":
