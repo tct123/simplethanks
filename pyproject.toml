@@ -1,4 +1,4 @@
-# This project was generated with 0.3.16 using template: https://github.com/beeware/briefcase-template@v0.3.16
+# This project was generated with 0.3.22 using template: https://github.com/beeware/briefcase-template@v0.3.22
 [tool.briefcase]
 project_name = "Simple Thanks"
 bundle = "de.cmg"
@@ -21,10 +21,10 @@ test_requires = ["pytest"]
 
 [tool.briefcase.app.simplethanks.macOS]
 universal_build = true
-requires = ["toga-cocoa~=0.4.8", "std-nslog~=1.0.3"]
+requires = ["toga-cocoa~=0.5.0", "std-nslog~=1.0.3"]
 
 [tool.briefcase.app.simplethanks.linux]
-requires = ["toga-gtk~=0.4.8"]
+requires = ["toga-gtk~=0.5.0"]
 
 [tool.briefcase.app.simplethanks.linux.system.debian]
 system_requires = [
@@ -136,16 +136,16 @@ flatpak_runtime_version = "47"
 flatpak_sdk = "org.gnome.Sdk"
 
 [tool.briefcase.app.simplethanks.windows]
-requires = ["toga-winforms~=0.4.8"]
+requires = ["toga-winforms~=0.5.0"]
 
 # Mobile deployments
 [tool.briefcase.app.simplethanks.iOS]
-requires = ["toga-iOS~=0.4.8", "std-nslog~=1.0.3"]
+requires = ["toga-iOS~=0.5.0", "std-nslog~=1.0.3"]
 
 [tool.briefcase.app.simplethanks.android]
-requires = ["toga-android~=0.4.8"]
+requires = ["toga-android~=0.5.0"]
 
-base_theme = "Theme.Material3.DynamicColors.DayNight"
+base_theme = "Theme.MaterialComponents.Light.DarkActionBar"
 
 build_gradle_dependencies = [
     "com.google.android.material:material:1.12.0",
@@ -157,5 +157,5 @@ build_gradle_dependencies = [
 
 # Web deployments
 [tool.briefcase.app.simplethanks.web]
-requires = ["toga-web~=0.4.8"]
+requires = ["toga-web~=0.5.0"]
 style_framework = "Shoelace v2.3"
