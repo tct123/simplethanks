@@ -40,32 +40,32 @@ class SimpleThanks(toga.App):
         # widgets
         thxtext = toga.Label(
             text=tr(csv_file=self.tr_file, target_key="THANKYOU", langcode=self.lang),
-            style=Pack(padding=10, flex=1),
+            style=Pack(margin=10, flex=1),
         )
         birthdaybtn = toga.Button(
             text=tr(csv_file=self.tr_file, target_key="BIRTHDAY", langcode=self.lang),
             on_press=self.pressed_birthdaybtn,
-            style=Pack(padding=10, flex=1),
+            style=Pack(margin=10, flex=1),
         )
         mothersdaybtn = toga.Button(
             text=tr(csv_file=self.tr_file, target_key="MOTHERSDAY", langcode=self.lang),
             on_press=self.pressed_mothersdaybtn,
-            style=Pack(padding=10, flex=1),
+            style=Pack(margin=10, flex=1),
         )
         fathersdaybtn = toga.Button(
             text=tr(csv_file=self.tr_file, target_key="FATHERSDAY", langcode=self.lang),
             on_press=self.pressed_fathersdaybtn,
-            style=Pack(padding=10, flex=1),
+            style=Pack(margin=10, flex=1),
         )
         websitebtn = toga.Button(
             text="Website",
             on_press=self.pressed_visitwebsitebtn,
-            style=Pack(padding=10, flex=1),
+            style=Pack(margin=10, flex=1),
         )
         updatebtn = toga.Button(
             text="Check for updates",
             on_press=self.pressed_updatebtn,
-            style=Pack(padding=10, flex=1),
+            style=Pack(margin=10, flex=1),
         )
 
         # add
@@ -111,7 +111,7 @@ class SimpleThanks(toga.App):
         # fathertask.add_done_callback(self.dialog_dismissed)
 
     def pressed_visitwebsitebtn(self, widget):
-        if platform != "android" and platform != "ios":
+        if platform not in ["android", "ios"]:
             self.visit_homepage()
         else:
             platformdialog = toga.InfoDialog(
