@@ -1,7 +1,7 @@
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
-from mylocale.TR import TR
+from mylocale import TR
 import locale
 import asyncio
 import mypysound as mp
@@ -16,6 +16,7 @@ class SimpleThanks(toga.App):
     def startup(self):
         self.mypath = self.paths.app.absolute()
         self.tr_file = f"{self.mypath}/resources/localisation.csv"
+        print(self.tr_file)
         upd.writeversion(filepath=self.mypath, version=self.version)
         self.update_url = upd.updater(
             repo="https://github.com/tct123/simplethanks",
