@@ -1,7 +1,7 @@
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
-from mylocale.TR import tr
+from mylocale.TR import TR
 import locale
 import asyncio
 import mypysound as mp
@@ -27,33 +27,34 @@ class SimpleThanks(toga.App):
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
             ).split("_")[0]
             # self.formal_name = (
-            #    tr(csv_file=self.tr_file, target_key="FORMALNAME", langcode=self.lang),
+            #    tr.tr( target_key="FORMALNAME", langcode=self.lang),
             # )
 
         else:
             self.lang = locale.getlocale()[0].split("_")[0]
-        # self._description = tr(
-        #    csv_file=self.tr_file, target_key="DESCRIBTION", langcode=self.lang
+        # self._description = tr.tr(
+        #     target_key="DESCRIBTION", langcode=self.lang
         # )
         main_box = toga.Box()
         # print(self.BACKGROUND)
         # widgets
+        tr = TR(langcode=self.lang, csv_file=self.tr_file)
         thxtext = toga.Label(
-            text=tr(csv_file=self.tr_file, target_key="THANKYOU", langcode=self.lang),
+            text=tr.tr(target_key="THANKYOU", langcode=self.lang),
             style=Pack(margin=10, flex=1),
         )
         birthdaybtn = toga.Button(
-            text=tr(csv_file=self.tr_file, target_key="BIRTHDAY", langcode=self.lang),
+            text=tr.tr(target_key="BIRTHDAY", langcode=self.lang),
             on_press=self.pressed_birthdaybtn,
             style=Pack(margin=10, flex=1),
         )
         mothersdaybtn = toga.Button(
-            text=tr(csv_file=self.tr_file, target_key="MOTHERSDAY", langcode=self.lang),
+            text=tr.tr(target_key="MOTHERSDAY", langcode=self.lang),
             on_press=self.pressed_mothersdaybtn,
             style=Pack(margin=10, flex=1),
         )
         fathersdaybtn = toga.Button(
-            text=tr(csv_file=self.tr_file, target_key="FATHERSDAY", langcode=self.lang),
+            text=tr.tr(target_key="FATHERSDAY", langcode=self.lang),
             on_press=self.pressed_fathersdaybtn,
             style=Pack(margin=10, flex=1),
         )
@@ -88,24 +89,16 @@ class SimpleThanks(toga.App):
 
     def pressed_mothersdaybtn(self, widget):
         motherdialog = toga.InfoDialog(
-            title=tr(
-                csv_file=self.tr_file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
-            ),
-            message=tr(
-                csv_file=self.tr_file, target_key="HAPPYMOTHERSDAY", langcode=self.lang
-            ),
+            title=tr.tr(target_key="HAPPYMOTHERSDAY", langcode=self.lang),
+            message=tr.tr(target_key="HAPPYMOTHERSDAY", langcode=self.lang),
         )
         mothertask = asyncio.create_task(self.main_window.dialog(motherdialog))
         # mothertask.add_done_callback(self.dialog_dismissed)
 
     def pressed_fathersdaybtn(self, widget):
         fatherdialog = toga.InfoDialog(
-            title=tr(
-                csv_file=self.tr_file, target_key="HAPPYFATHERSDAY", langcode=self.lang
-            ),
-            message=tr(
-                csv_file=self.tr_file, target_key="HAPPYFATHERSDAY", langcode=self.lang
-            ),
+            title=tr.tr(target_key="HAPPYFATHERSDAY", langcode=self.lang),
+            message=tr.tr(target_key="HAPPYFATHERSDAY", langcode=self.lang),
         )
         fathertask = asyncio.create_task(self.main_window.dialog(fatherdialog))
         # fathertask.add_done_callback(self.dialog_dismissed)
@@ -115,13 +108,11 @@ class SimpleThanks(toga.App):
             self.visit_homepage()
         else:
             platformdialog = toga.InfoDialog(
-                title=tr(
-                    csv_file=self.tr_file,
+                title=tr.tr(
                     target_key="SUPPORTEDPLATFORM",
                     langcode=self.lang,
                 ),
-                message=tr(
-                    csv_file=self.tr_file,
+                message=tr.tr(
                     target_key="SUPPORTEDPLATFORM",
                     langcode=self.lang,
                 ),
